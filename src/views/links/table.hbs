@@ -1,18 +1,10 @@
-<div class="container p-5" ">
-  
+<div class="container p-5" ">    
 
- 
-
-    
-      <div class=" col-md- mx-auto">{{!Columna de 4 //// Se hace poniendo .col-md-4}}
-              {{!mx auto centra la tarjeta }}
-              
-
-        <p >
-            <a style="align-items: center;" href="/links" >Para editar o eliminar pulse aqui</a>
-        </p>
         
-
+        {{#if links}}
+        <p >
+            <a style="align-items: center;" href="/links/add" >Crear Enlace</a>
+        </p>
         <table class="table table-dark" align="center" border="1" class="table table-condensed table-bordered table-hover">
           <tr class="tabla">
             <th scope="col">#</th>
@@ -22,8 +14,7 @@
             <th scope="col">Creado</th>
 
           </tr>
-          </thead>
-          <tbody>
+  
             {{#each links}}
             <tr style="background-color: cadetblue;">
               <th scope="row">{{id}}</th>
@@ -31,19 +22,27 @@
               <td>{{description}}</td>
               <td>{{url}} </td>
               <td>{{timeago created_at}}</td>
-              <td><a href="{{url}}" class="btn btn-success"> Ir</a> </td>
+              <td><a href="{{url}}" class="btn btn-success" target="_blanck"> Ir</a> </td>
             </tr>
-            {{/each}}
-              
+            {{/each}}           
 
           </tbody>
         </table>
-
-      </div>
+        <a style="margin-top:50px ;" href="/profile" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Regresar</a>
+        {{else}}
+        <div class="col-md-4 mx-auto">
+                <div class="card card-body text-center">
+                    <p>No tienes links creados.</p>
+                    {{!y redireccionamos a la ruta para agregar el primer enlase}}
+                    <a href="/links/add">Crea uno ahora!</a>                                                          
+                </div>
+         </div>
+        {{/if}}      
+</div>        
       
       
   
 
-<a href="/profile" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Regresar</a>
+
 
 

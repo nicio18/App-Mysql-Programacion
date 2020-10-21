@@ -59,7 +59,7 @@ router.get('/table', isLoggedIn, async(req, res)=>{
     const {id} = req.params;
     const links = await pool.query('SELECT * FROM links WHERE id = ?', [id]);
     
-    res.render('links/edit',isLoggedIn, {link:links[0]})
+    res.render('links/edit', {link:links[0]})
  })
  router.post('/edit/:id',isLoggedIn, async (req, res) => {
     const { id } = req.params;

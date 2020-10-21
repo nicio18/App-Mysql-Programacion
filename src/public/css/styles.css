@@ -28,3 +28,13 @@ body{
    height: 70%;
 }
 
+.card{
+    background-color:lightblue ;
+}
+.itemEdit{
+    display: table-cell;
+    vertical-align: middle
+
+
+}
+
